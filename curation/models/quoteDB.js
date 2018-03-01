@@ -6,10 +6,10 @@
  */
 
 const pgp = require('pg-promise')();
-const dbConfig = require('../config/dbConfig');
+const quotesDBConfig = require('../config/quotesDBConfig');
 
 // execute pgp with our db config, so a connection is made.
-const db = pgp(dbConfig);
+const db = pgp(quotesDBConfig);
 
 // @see https://github.com/vitaly-t/pg-promise#query-result-mask
 

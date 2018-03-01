@@ -1,5 +1,5 @@
 /**
- * @module dbConfig
+ * @module quotesDBConfig
  * @desc this file contains all the connection strings
  * to connect to the database server
  */
