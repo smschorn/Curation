@@ -1,0 +1,639 @@
+{
+	"variables": [],
+	"info": {
+		"name": "quote-sta-gram",
+		"_postman_id": "3f69cb99-2b0d-9975-6afc-6f60b73320a9",
+		"description": "# Quote-Sta-Gram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Homepage is correct\"] = responseBody === \"<h1>Hello World!</h1>\";",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3000/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Homepage"
+			},
+			"response": [
+				{
+					"id": "7791fea1-272b-40e1-8edd-1b657e0ad17c",
+					"name": "Homepage",
+					"originalRequest": {
+						"url": "http://localhost:3000/",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Aug 2017 19:00:13 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15-R9Pux9PTCIXUMsK5XDHxL8nPR0I\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Wed Jan 06 2038 08:14:07 GMT-0800 (PST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3AlKxaFOmnyRZwVNFmT9C-W-aXtUV0r-Hp.UNbVhOBWRS45yP9QcXwyXqZRS593s%2BB9l1CSGx%2BsKTg",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 10,
+					"body": "<h1>Hello World!</h1>"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/quotes",
+			"request": {
+				"url": "http://localhost:3000/quotes",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "List all quotes"
+			},
+			"response": [
+				{
+					"id": "7baa1515-5f7c-4173-93a8-c4e137aaba98",
+					"name": "List quotes",
+					"originalRequest": {
+						"url": "http://localhost:3000/quotes",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Aug 2017 18:59:54 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-WrI9hflMSdX4ElE6KAR6o9OgQPc\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Wed Jan 06 2038 08:14:07 GMT-0800 (PST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3AlKxaFOmnyRZwVNFmT9C-W-aXtUV0r-Hp.UNbVhOBWRS45yP9QcXwyXqZRS593s%2BB9l1CSGx%2BsKTg",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 11,
+					"body": "This is a listing of quotes"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/quotes",
+			"request": {
+				"url": "http://localhost:3000/quotes",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": "Receive quote data; create a new quote; return new quoteID"
+			},
+			"response": [
+				{
+					"id": "c56a1fa4-bbd2-444c-b28b-50db24e7be10",
+					"name": "receive quote data",
+					"originalRequest": {
+						"url": "http://localhost:3000/quotes",
+						"method": "POST",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": ""
+						},
+						{
+							"key": "Content-Length",
+							"value": "31",
+							"name": "Content-Length",
+							"description": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": ""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Aug 2017 18:59:38 GMT",
+							"name": "Date",
+							"description": ""
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-P67DU4wOEAe/VFfZqDpZL6TsbEU\"",
+							"name": "ETag",
+							"description": ""
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": ""
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Wed Jan 06 2038 08:14:07 GMT-0800 (PST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3AlKxaFOmnyRZwVNFmT9C-W-aXtUV0r-Hp.UNbVhOBWRS45yP9QcXwyXqZRS593s%2BB9l1CSGx%2BsKTg",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 6,
+					"body": "I’m accepting quote POST data"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/quotes/:id",
+			"request": {
+				"url": "http://localhost:3000/quotes/345",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "View ONE quote"
+			},
+			"response": [
+				{
+					"id": "b1731b38-312d-4abf-99b2-51a55b34c2e4",
+					"name": "READ quote 345",
+					"originalRequest": {
+						"url": "http://localhost:3000/quotes/345",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Aug 2017 18:59:26 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12-/FZgQfNneDfXihhZin8FwFLvkAE\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Wed Jan 06 2038 08:14:07 GMT-0800 (PST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3AlKxaFOmnyRZwVNFmT9C-W-aXtUV0r-Hp.UNbVhOBWRS45yP9QcXwyXqZRS593s%2BB9l1CSGx%2BsKTg",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 18,
+					"body": "This is quote #345"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/quotes/:id",
+			"request": {
+				"url": "http://localhost:3000/quotes/345",
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"description": "Replace ONE quote"
+			},
+			"response": [
+				{
+					"id": "07a77768-8bb8-4b12-903b-94ef1c71ae44",
+					"name": "REPLACE quote 345",
+					"originalRequest": {
+						"url": "http://localhost:3000/quotes/345",
+						"method": "PUT",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Aug 2017 18:59:04 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-n/BYYNx6/9/lznDI5zp/zWlkpJ0\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Wed Jan 06 2038 08:14:07 GMT-0800 (PST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3AlKxaFOmnyRZwVNFmT9C-W-aXtUV0r-Hp.UNbVhOBWRS45yP9QcXwyXqZRS593s%2BB9l1CSGx%2BsKTg",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 13,
+					"body": "I’ll replace quote #345 with the data you give me"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/quotes/:id",
+			"request": {
+				"url": "http://localhost:3000/quotes/345",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "DELETE ONE quote"
+			},
+			"response": [
+				{
+					"id": "658f5bd2-b230-4331-aa25-660cf270ad7c",
+					"name": "DELETE quote 345",
+					"originalRequest": {
+						"url": "http://localhost:3000/quotes/345",
+						"method": "DELETE",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Aug 2017 18:58:48 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-gNKKYGfayD5AeCi8cIjHV9tmW24\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Wed Jan 06 2038 08:14:07 GMT-0800 (PST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3AlKxaFOmnyRZwVNFmT9C-W-aXtUV0r-Hp.UNbVhOBWRS45yP9QcXwyXqZRS593s%2BB9l1CSGx%2BsKTg",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 27,
+					"body": "I’ll delete quote #345 with the data you give me"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/quotes/new",
+			"request": {
+				"url": "http://localhost:3000/quotes/new",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "HTML NEW quote"
+			},
+			"response": [
+				{
+					"id": "5a207f33-c8f7-42ee-8559-07c638079d38",
+					"name": "HTML FORM new quote",
+					"originalRequest": {
+						"url": "http://localhost:3000/quotes/new",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Aug 2017 18:57:55 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-7lMfnrUhlj94gjUpIwsZbHdlI1I\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Wed Jan 06 2038 08:14:07 GMT-0800 (PST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3AlKxaFOmnyRZwVNFmT9C-W-aXtUV0r-Hp.UNbVhOBWRS45yP9QcXwyXqZRS593s%2BB9l1CSGx%2BsKTg",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 25,
+					"body": "I’m the HTML form for new quotes. I post to /quotes"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/quotes/:id/edit",
+			"request": {
+				"url": "http://localhost:3000/quotes/456/edit",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "HTML EDIT quote"
+			},
+			"response": [
+				{
+					"id": "c1ec9c8c-94f0-4df1-a9e8-a2e82b97c76a",
+					"name": "HTML Edit Quote #456",
+					"originalRequest": {
+						"url": "http://localhost:3000/quotes/456/edit",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Aug 2017 18:52:36 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-oAS9PVvLTnhdvhMWDk7QVFeppnw\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Wed Jan 06 2038 08:14:07 GMT-0800 (PST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3AlKxaFOmnyRZwVNFmT9C-W-aXtUV0r-Hp.UNbVhOBWRS45yP9QcXwyXqZRS593s%2BB9l1CSGx%2BsKTg",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 31,
+					"body": "I’m the HTML form for editing quote #456. I post data to /quotes"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,11 @@
+<% include ../partials/boilerplate %>
+<form method="POST" action="/quotes/<%= data.id %>?_method=PUT">
+  <!-- passing id as a part of the body, but the input field is set to hidden, so not to render on the page -->
+  <input name="id" type="hidden" value="<%= data.id %>">
+  <input name="content" type="text" value="<%= data.content %>" />
+  <input name="author" type="text" value="<%= data.author %>" />
+  <input name="genre_type" type="text" value="<%= data.genre_type%">
+  <input type="submit" value="Edit it!" />
+</form>
+
+<% include ../partials/footer %>

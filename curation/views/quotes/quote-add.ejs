@@ -1,0 +1,14 @@
+<% include ../partials/boilerplate %>
+<!--TODO: [10]
+* Create a dropdown and display all genres.(remember, you are passing it from the genresController) Check out the docs for a dropdown. Probably you will need some kind of looP!
+* Make sure to render the "id" of individual genre as a value and genre text as a selection.
+* What is the new "name" for genre?
+-->
+<form method="POST" action="/quotes">
+  <input name="content" type="text" placeholder="Quote" />
+  <input name="author" type="text" placeholder="Author" />
+  <input name="genre_type" type="text" placeholder="Genre">
+  <input type="submit" value="Add it!" />
+</form>
+
+<% include ../partials/footer %>
