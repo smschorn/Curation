@@ -9,6 +9,9 @@
     "dev": "nodemon",
     "debug": "nodemon --inspect"
   },
+  "engines": {
+    "node": "9.4.0"
+  },
   "keywords": [],
   "author": "Jason Seminara <js@ga.co>",
   "contributors": [
