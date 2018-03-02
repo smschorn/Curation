@@ -4,10 +4,13 @@
   <div class="container">
     <h1 class="jumbotron-heading">Album example</h1>
     <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-    <p>
-      <a href="#" class="btn btn-primary my-2">Main call to action</a>
-      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-    </p>
+    <form class="form-inline" action="/collections" method="post">
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control-plaintext" id="collection_name" placeholder="enter a new collection name">
+      </div>
+      <button type="submit" class="btn btn-success mb-2">Create Collection</button>
+    </form>
+    <a class="btn btn-primary" href="/collections">View all Collections</a>
   </div>
 </section>
 <!--
