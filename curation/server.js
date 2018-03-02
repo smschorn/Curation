@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 
 const quotesRouter = require('./routes/quotes');
+const collectionsRouter = require('./routes/collections');
 
 /* create a PORT that checks the process.env or defaults to 3000 */
 const PORT = process.env.PORT || 3000;
@@ -33,6 +34,7 @@ app.use(methodOverride('_method'));
 
 /* ROUTES */
 app.use('/quotes', quotesRouter);
+app.use('/collections', collectionsRouter);
 
 /*
   HOME route
@@ -41,11 +43,11 @@ app.use('/quotes', quotesRouter);
 */
 app.get('/', (req, res) => {
   res.render('index', {
-    message:       'Hello world!',
-    documentTitle: 'This is WDI quotes!!',
-    subTitle:      'Read some of the coolest quotes around.',
-    showMore:      false,
-    quoteAuthors:  ['Unknown', 'Yoda', 'CS Lewis', 'Frank Chimero', 'Pablo Picasso', 'Italo Calvino', 'T. S. Eliot', 'Samuel Beckett', 'Hunter S. Thompson'],
+    // message:       'Hello world!',
+    // documentTitle: 'This is WDI quotes!!',
+    // subTitle:      'Read some of the coolest quotes around.',
+    // showMore:      false,
+    // quoteAuthors:  ['Unknown', 'Yoda', 'CS Lewis', 'Frank Chimero', 'Pablo Picasso', 'Italo Calvino', 'T. S. Eliot', 'Samuel Beckett', 'Hunter S. Thompson'],
   });
 });
 
