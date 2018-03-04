@@ -5,7 +5,6 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 
-const quotesRouter = require('./routes/quotes');
 const collectionsRouter = require('./routes/collections');
 
 /* create a PORT that checks the process.env or defaults to 3000 */
@@ -33,7 +32,6 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
 /* ROUTES */
-app.use('/quotes', quotesRouter);
 app.use('/collections', collectionsRouter);
 
 /*

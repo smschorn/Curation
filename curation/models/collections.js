@@ -55,8 +55,8 @@ module.exports = {
    */
   save(collection) {
     return db.one(`
-      INSERT INTO collections (user_id, name)
-      VALUES ($/user_id/, $/name/)
+      INSERT INTO collections (name)
+      VALUES ($/name/)
       RETURNING *
       `, collection);
   },
@@ -74,7 +74,6 @@ module.exports = {
     return db.one(`
       UPDATE collections
       SET
-      user_id = $/user_id/,
       name = $/name/
       WHERE id = $/id/
       RETURNING *

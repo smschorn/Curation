@@ -6,27 +6,15 @@
 
 \c curation_db;
 
-DROP TABLE IF EXISTS users;
-
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
-  date_created TIMESTAMP NOT NULL DEFAULT NOW()
-);
-
-CREATE INDEX ON users (name);
-
 DROP TABLE IF EXISTS collections;
 
 CREATE TABLE collections (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  user_id INTEGER,
   date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
 CREATE INDEX ON collections (name);
-CREATE INDEX ON collections (user_id);
 
 DROP TABLE IF EXISTS artworks;
 
