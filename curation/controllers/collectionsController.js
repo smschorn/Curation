@@ -16,7 +16,7 @@ module.exports = {
    * @param {next} next - The next middleware function in our route
    * @return {undefined}
    */
-  index(req, res, next) {
+  getAll(req, res, next) {
     collectionDB.findAll()
       .then((collections) => {
         res.locals.collections = collections;
