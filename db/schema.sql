@@ -4,7 +4,6 @@
 -- TODO: [5] modify the quotes table to comply with the seed as well
 -- TODO: [6] run both, the schema file and the seed
 
-\c curation_db;
 
 DROP TABLE IF EXISTS collections;
 
