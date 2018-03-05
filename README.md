@@ -1,5 +1,7 @@
 # curation
 
+Link to Vimeo overview:  https://vimeo.com/258552017
+
 ![Database Structure](https://github.com/smschorn/curation/blob/master/assets/Database%20Structure.JPG?raw=true)
 
 ![Wireframe - 1](https://github.com/smschorn/curation/blob/master/assets/Wireframe%20-%201.JPG?raw=true)
