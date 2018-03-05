@@ -112,3 +112,22 @@ let removeFromCollection = function() {
 }
 
 $('a.btn-remove-artwork').on('click', removeFromCollection);
+
+let deleteCollection = function() {
+  let deleteUrl = $(this).attr('href');
+  let collectionId = $(this).data('id');
+
+  $.ajax({
+    url: deleteUrl,
+    type: 'DELETE',
+    success: function(response) {
+      $("#collection-" + collectionId).fadeOut("normal", function() {
+        $(this).remove();
+      });
+    }
+  });
+
+  return false;
+}
+
+$('a.btn-delete-collection').on('click', deleteCollection);

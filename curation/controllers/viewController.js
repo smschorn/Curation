@@ -31,8 +31,5 @@ module.exports = {
   },
   updateCollection(req, res) {
     res.redirect(`/collection/${req.params.id}`);
-  },
-  deleteCollection(req, res) {
-    res.redirect('/collections');
   }
 };

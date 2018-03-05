@@ -9,7 +9,7 @@ collectionsRouter.get('/:id/edit', collectionsController.getOne, views.editColle
 collectionsRouter.route('/:id')
   .get(collectionsController.getOne, views.showCollection, views.show404)
   .put(collectionsController.update, views.updateCollection, views.show406)
-  .delete(collectionsController.destroy, views.deleteCollection, views.show404);
+  .delete(collectionsController.destroy, views.show200, views.show404);
 
 collectionsRouter.route('/')
   .get(collectionsController.getAll, views.showAllCollections, views.show404)
