@@ -1,8 +1,3 @@
-/**
- * @module controllers/collectionsController
- * @author Scott
- */
-
 const collectionDB = require('../models/collections');
 const artworkDB = require('../models/artworks');
 /**
@@ -23,7 +18,10 @@ module.exports = {
         res.locals.collections = collections;
         next();
       })
-      .catch(err => next(err));
+      .catch(err => {
+        res.locals.collections = [];
+        next()
+      });
   },
 
   /**
