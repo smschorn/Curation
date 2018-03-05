@@ -38,6 +38,7 @@ module.exports = {
       .then((collection) => {
         console.log(collection);
         res.locals.collection = collection;
+        res.locals.artworks = [];
         next();
       })
       .catch(err => next(err));

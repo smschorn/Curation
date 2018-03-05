@@ -1,0 +1,33 @@
+<% include ../partials/boilerplate %>
+
+<div class="container border-bottom mb-3">
+  <div class="row">
+    <h1>All Collections</h1>
+  </div>
+</div>
+
+<ul class="list-group col-sm-12">
+  <% for (let collection of collections) { %>
+    <li class="list-group-item d-flex justify-content-between align-items-center" id="collection-<%= collection.id %>">
+      <div class="col-sm-7">
+        <%= collection.name %>
+      </div>
+      <div class="col-sm-5 text-right">
+        <a href='/collections/<%= collection.id%>' class='btn btn-success col-sm-3'>
+          <i class="fas fa-eye"></i>&nbsp;
+          View
+        </a>
+        <a href='/collections/<%= collection.id%>/edit' class='btn btn-primary col-sm-3'>
+          <i class="fas fa-edit"></i>&nbsp;
+          Edit
+        </a>
+        <a href='/collections/<%= collection.id%>' data-id="<%= collection.id %>" class='btn btn-danger col-sm-3 btn-delete-collection'>
+          <i class="fas fa-trash-alt"></i>&nbsp;
+          Delete
+        </a>
+      </div>
+    </li>
+  <% } %>
+</ul>
+
+<% include ../partials/footer %>

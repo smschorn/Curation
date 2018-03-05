@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 
 const collectionsRouter = require('./routes/collections');
+const artworksRouter = require('./routes/artworks');
 
 /* create a PORT that checks the process.env or defaults to 3000 */
 const PORT = process.env.PORT || 3000;
@@ -34,6 +35,7 @@ app.use(methodOverride('_method'));
 
 /* ROUTES */
 app.use('/collections', collectionsRouter);
+app.use('/artworks', artworksRouter);
 
 /*
   HOME route

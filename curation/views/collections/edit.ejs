@@ -1,29 +1,36 @@
 <% include ../partials/boilerplate.ejs %>
 
-<div class="container bg-white rounded box-shadow">
-  <div class="row border-bottom">
-    <div class="col-sm-12">
-      <h6>Edit Collection</h6>
-      <h5><%= collection.name %></h5>
-    </div>
-  </div>
-
+<div class="container border-bottom mb-3" id="collection-container" data-id="<%= collection.id %>">
   <div class="row">
-    <div class="col-sm-12">
-      <form class="form-inline" id="artwork-search" method="post">
-        <div class="form-group col-sm-9">
-          <input type="text" class="form-control plaintext col-sm-12" name="keyword" id="artwork-keyword" placeholder="enter a new keyword to search for in an artwork">
-        </div>
-        <div class="form-group col-sm-3">
-          <button type="submit" class="btn btn-success col-sm-12">Search</button>
-        </div>
-      </form>
+    <div class='col-sm-8'>
+      <h3>Edit Collection: <a href='/collections/<%= collection.id%>'><%= collection.name %></a></h3>
+    </div>
+    <div class='col-sm-4 text-right'>
+      <a href='/collections/<%= collection.id%>' class='btn btn-primary'>
+        <i class="fas fa-eye"></i>&nbsp;
+        View Collection
+      </a>
     </div>
   </div>
 </div>
 
-<div class="container mt-4">
-  <div class="row" id="search-results">
+<div class="container mt-3 mb-3">
+  <form class="row form-inline" id="artwork-search" method="post">
+    <div class="form-group col-sm-10">
+      <input type="text" class="form-control plaintext col-sm-12" name="keyword" id="artwork-keyword" placeholder="enter a new keyword to search for in an artwork">
+    </div>
+    <div class="form-group col-sm-2">
+      <button type="submit" class="btn btn-success col-sm-12">
+        <i class="fas fa-search"></i>&nbsp;
+        Search
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="container mt-3">
+  <div class="row text-center" id="search-results">
+    <span>Enter a keyword above to search for specific pieces of artwork from the museum to add to your collection</span>
   </div>
   <% include ../search/artwork.ejs %>
 </div>

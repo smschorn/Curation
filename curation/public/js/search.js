@@ -1,3 +1,5 @@
+let collectionId = $('#collection-container').data('id');
+
 let searchHarvardMuseumAPI = function() {
   let keyword = $("input#artwork-keyword").val();
   // Constants for access to the Harvard Museum API
@@ -48,11 +50,11 @@ let createArtworkThumbnailForDisplay = function(artwork) {
 
   // If the artwork data from Harvard Museum API returns at least one image,
   // let's use that image to display a thumbnail in the result page
+  let imgHref = null;
   if (artwork.images && artwork.images.length > 0) {
-    // For good image resolution, request an image scaled to a height of 255px
-    let imgHref = artwork.images[0].baseimageurl + "?height=255";
-    // Set the img href to the image URL we got from the Harvard Museum API
-    artworkDiv.find('img').attr('src', imgHref);
+    imgHref = artwork.images[0].baseimageurl;
+    // Set the img href to the image URL we got from the Harvard Museum API, scaled to a height of 255px
+    artworkDiv.find('img').attr('src', imgHref + "?height=255");
   }
 
   // Set the name of the result to the artwork title
@@ -60,11 +62,13 @@ let createArtworkThumbnailForDisplay = function(artwork) {
 
   // Show the add button
   artworkDiv.find('.btn').attr('data-object-id', artwork.objectid);
-  artworkDiv.find('.btn-remove').hide();
+  artworkDiv.find('.btn-added').hide();
 
   // Set it so when the user clicks the add button it calls the function to add
   // this artwork to the collection
-  artworkDiv.find('.btn-add').click(addToCollection);
+  artworkDiv.find('.btn-add').click(function() {
+    addToCollection(artworkDiv, artwork.objectid, artwork.title, imgHref);
+  });
 
   // Display this artwork (the template is hidden, so when we cloned the
   // template, by default this artwork thumbnail would have been hidden as well)
@@ -74,8 +78,18 @@ let createArtworkThumbnailForDisplay = function(artwork) {
   return artworkDiv;
 }
 
-let addToCollection = function() {
-  alert('TODO: implement this')
+let addToCollection = function(artworkDiv, objectId, title, imageURL) {
+  let data = {
+    collection_id: collectionId,
+    object_id: objectId,
+    title: title,
+    image_url: imageURL
+  }
+  $.post('/artworks', data, function(data, status) {
+    artworkDiv.find('.btn-add').hide();
+    artworkDiv.find('.btn-added').show();
+  });
+  return false;
 }
 
 $("#artwork-search").submit(searchHarvardMuseumAPI);

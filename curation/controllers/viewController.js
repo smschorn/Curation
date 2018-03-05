@@ -1,5 +1,9 @@
 module.exports = {
 
+  show200(req, res) {
+    res.sendStatus(200);
+  },
+
   show404(err, req, res, next) {
     res.sendStatus(404);
   },
