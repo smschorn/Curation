@@ -1,8 +1,3 @@
-/**
- * @module controllers/artworksController
- * @author Scott
- */
-
 const artworkDB = require('../models/artworks');
 /**
  * Create a artworkController

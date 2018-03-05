@@ -93,3 +93,22 @@ let addToCollection = function(artworkDiv, objectId, title, imageURL) {
 }
 
 $("#artwork-search").submit(searchHarvardMuseumAPI);
+
+let removeFromCollection = function() {
+  let deleteUrl = $(this).attr('href');
+  let artworkId = $(this).data('id');
+
+  $.ajax({
+    url: deleteUrl,
+    type: 'DELETE',
+    success: function(response) {
+      $("#artwork-" + artworkId).fadeOut("normal", function() {
+        $(this).remove();
+      });
+    }
+  });
+
+  return false;
+}
+
+$('a.btn-remove-artwork').on('click', removeFromCollection);
