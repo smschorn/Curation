@@ -28,6 +28,21 @@ module.exports = {
       ORDER BY id
     `);
   },
+
+  /**
+   * @func findAllByCollectionId
+   * @desc search through all the artworks with a specific collectionId
+   * @returns {Promise}
+   * @hint this
+   */
+  findAllByCollectionId(collectionId) {
+    return db.many(`
+      SELECT *
+        FROM artworks
+        WHERE collection_id = $1
+      ORDER BY id
+    `, collectionId);
+  },
   /**
    * @func findById
    * @param id {number} the ID of the artwork to search for

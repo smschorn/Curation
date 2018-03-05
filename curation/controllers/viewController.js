@@ -1,9 +1,7 @@
 module.exports = {
-
   show200(req, res) {
     res.sendStatus(200);
   },
-
   show404(err, req, res, next) {
     res.sendStatus(404);
   },
@@ -11,11 +9,10 @@ module.exports = {
     res.sendStatus(406);
   },
 
-
   // collections
   showAllCollections(req, res) {
     res.render('collections/index', {
-      data: res.locals.quotes,
+      collection: res.locals.collection
     });
   },
   createCollection(req, res) {
@@ -23,12 +20,13 @@ module.exports = {
   },
   editCollection(req, res) {
     res.render('collections/edit', {
-      data: res.locals.quote,
+      collection: res.locals.collection,
     });
   },
   showCollection(req, res) {
     res.render('collections/show', {
-      data: res.locals.quote,
+      collection: res.locals.collection,
+      artworks: res.locals.artworks
     });
   },
   updateCollection(req, res) {
